@@ -1,8 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-
-#define N 15
 
 // Partition using Hoare's Partitioning scheme
 int partition(int a[], int low, int high)
@@ -44,6 +41,23 @@ void quicksort(int a[], int low, int high)
     // recur on subarray containing elements that are more than the pivot
     quicksort(a, pivot + 1, high);
     }
- 
-    
+}
+
+int main() 
+{
+    int n,a[100];
+    printf("Enter the number of elements\n");
+    scanf("%d",&n);
+    printf("Enter the elements\n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    quicksort(a,0,n-1);
+    printf("Sorted elements\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+    return 0;
 }
